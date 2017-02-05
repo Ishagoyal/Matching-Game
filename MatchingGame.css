@@ -9,9 +9,12 @@ font-size:18px;
 
 #outer{
 border:0.5px solid black;
-position:realtive;
 height:500px;
 margin:20px;
+}
+#leftSide img{
+
+  position:absolute;
 }
 
 

@@ -1,23 +1,26 @@
 var numberOfFaces=5;
-var theLeftSide=document.getElementById("leftSide");
-var imgHeight=100;
-var imgWidth=100;
+var theLeftSide;
+console.log(theLeftSide);
+var imgHeight=80;
+var imgWidth=80;
 
-function generateFaces(){
-
+window.onload=function generateFaces(){
+theLeftSide=document.getElementById("leftSide");
 while(numberOfFaces>0){
 var smileImg=document.createElement("img");
 
 smileImg.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
 smileImg.style.height=imgHeight + "px";
-var randomTop=Math.random() * 300;
-console.log(randomTop);
-smileImg.style.top= randomTop + "px";
 smileImg.style.width=imgWidth + "px";
-var randomLeft=Math.random() * 400;
+var randomTop=Math.random() * 400;
+randomTop=Math.floor(randomTop);
+console.log(randomTop);
+var randomLeft=Math.random() * 500;
+randomLeft=Math.floor(randomLeft);
 console.log(randomLeft);
+smileImg.style.top= randomTop + "px";
 smileImg.style.left=randomLeft + "px";
-leftSide.appendChild(smileImg);
+theLeftSide.appendChild(smileImg);
 numberOfFaces--;
 }
 
