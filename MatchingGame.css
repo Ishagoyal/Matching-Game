@@ -1,16 +1,20 @@
 body{
 margin:50px;
-
+background-color:palegreen;
 }
 p{
 text-align:center;
-font-size:18px;
+font-size:22px;
+color:red;
+font-weight:bold;
+font-family:'Architects Daughter';
 }
 
 #outer{
 border:0.5px solid black;
 height:500px;
 margin:20px;
+background-color:cornflowerblue;
 }
 #leftSide img{
 

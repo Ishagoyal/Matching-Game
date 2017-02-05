@@ -29,13 +29,12 @@ numberOfFaces--;
 leftSideImages=theLeftSide.cloneNode(true);
 leftSideImages.removeChild(leftSideImages.lastChild);
 theRightSide.append(leftSideImages);
-
 theLeftSide.lastChild.onclick=function nextLevel(event){
 theLeftSide.removeChild(theLeftSide.lastChild);
  event.stopPropagation();
  numberOfFaces += 4;
  generateFaces();
-
+ 
 }
 
 theBody=document.getElementsByTagName("body")[0];
