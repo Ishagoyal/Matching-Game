@@ -1,11 +1,13 @@
 var numberOfFaces=5;
 var theLeftSide;
-console.log(theLeftSide);
+var theRightSide;
 var imgHeight=80;
 var imgWidth=80;
+var leftSideImages;
 
-window.onload=function generateFaces(){
+function generateFaces(){
 theLeftSide=document.getElementById("leftSide");
+theRightSide = document.getElementById("rightSide");
 while(numberOfFaces>0){
 var smileImg=document.createElement("img");
 
@@ -22,6 +24,10 @@ smileImg.style.top= randomTop + "px";
 smileImg.style.left=randomLeft + "px";
 theLeftSide.appendChild(smileImg);
 numberOfFaces--;
+
 }
+leftSideImages=theLeftSide.cloneNode(true);
+leftSideImages.removeChild(leftSideImages.lastChild);
+theRightSide.append(leftSideImages);
 
 }
