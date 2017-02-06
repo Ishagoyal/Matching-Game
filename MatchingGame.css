@@ -1,5 +1,5 @@
 body{
-margin:50px;
+margin:40px;
 background-color:palegreen;
 }
 p{
@@ -8,6 +8,20 @@ font-size:22px;
 color:red;
 font-weight:bold;
 font-family:'Architects Daughter';
+}
+
+#scoreText{
+
+text-align:center;
+}
+
+h3{
+text-align:center;
+display:inline;
+color:red;
+font-weight:bold;
+font-family:'Architects Daughter';
+
 }
 
 #outer{

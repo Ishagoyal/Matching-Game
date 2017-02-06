@@ -5,10 +5,14 @@ var imgHeight=80;
 var imgWidth=80;
 var leftSideImages;
 var theBody;
+var count=0;
+var score;
 
 function generateFaces(){
 theLeftSide=document.getElementById("leftSide");
 theRightSide=document.getElementById("rightSide");
+score=document.getElementById("score");
+score.innerHTML=count;
 while(numberOfFaces>0){
 var smileImg=document.createElement("img");
 smileImg.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
@@ -34,15 +38,19 @@ theLeftSide.removeChild(theLeftSide.lastChild);
  event.stopPropagation();
  numberOfFaces += 4;
  generateFaces();
+ count+=5;
+ score.innerHTML=count;
  
 }
 
 theBody=document.getElementsByTagName("body")[0];
 
 theBody.onclick=function gameOver(){
-alert("Game Over! You have not clicked on the extra smiley...");
+alert("Game Over! You have not clicked on the extra smiley...\nAnd Your Score is " +count+ "!");
 theBody.onclick=null;
 theLeftSide.lastChild.onclick=null;
+window.location.reload();
+
 }
 
 }
