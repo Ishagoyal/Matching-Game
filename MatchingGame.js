@@ -9,7 +9,9 @@ var count=0;
 var score;
 var timer;
 var sound;
-var clicked=false;
+var seconds=20;
+var music;
+
 
 
 function generateFaces(){
@@ -19,6 +21,9 @@ score=document.getElementById("score");
 score.innerHTML=count;
 sound=document.createElement("audio");
 sound.src="http://themezz.com/files/Sounds/Click-5.wav";
+music=document.createElement("audio");
+music.src="547734_The-Penguin---Theme.mp3"
+music.play();
 while(numberOfFaces>0){
 var smileImg=document.createElement("img");
 smileImg.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
@@ -39,9 +44,10 @@ numberOfFaces--;
 leftSideImages=theLeftSide.cloneNode(true);
 leftSideImages.removeChild(leftSideImages.lastChild);
 theRightSide.append(leftSideImages);
-clicked=false;
+
+
 theLeftSide.lastChild.onclick=function nextLevel(event){
-clicked=true;
+seconds=20;
 sound.play();
 theLeftSide.removeChild(theLeftSide.lastChild);
  event.stopPropagation();
@@ -50,7 +56,9 @@ theLeftSide.removeChild(theLeftSide.lastChild);
  count+=5;
  score.innerHTML=count;
  
+ 
 }
+
 
 theBody=document.getElementsByTagName("body")[0];
 
@@ -64,16 +72,20 @@ window.location.reload();
 }
 function timeOver(){
  alert("Time Up! Game Over!\n And Your Score is "+count+ "!");
+ music.pause();
  theBody.onclick=null;
 theLeftSide.lastChild.onclick=null;
 window.location.reload();
 }
-
-if(clicked==false){
-timer=setTimeout(timeOver, 10000);
-console.log(clicked);
+ generateFaces.timeOver=timeOver;
 }
-
-
+window.onload=function countDown(){
+ var time=document.getElementById("time");
+  time.innerHTML=seconds;
+  seconds--;
+ if(seconds>0)
+  timeoutHandle=setTimeout(countDown, 1000);
+ else
+ generateFaces.timeOver();
 }
 
