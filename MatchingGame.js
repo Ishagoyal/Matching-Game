@@ -13,7 +13,7 @@ var seconds = 20;
 var music;
 
 sound = document.createElement("audio");
-sound.src = "http://themezz.com/files/Sounds/Click-5.wav";
+sound.src = "http://www.soundjay.com/misc/sounds/briefcase-lock-4.mp3";
 music = document.createElement("audio");
 music.src = "547734_The-Penguin---Theme.mp3"
 music.play();
