@@ -89,6 +89,5 @@ function countDown(){
 window.onload =function(){
  
  generateFaces();
- countDown();
- 
+ countDown(); 
 }
